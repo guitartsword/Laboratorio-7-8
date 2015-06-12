@@ -1,0 +1,45 @@
+GESTION DE PERSONAL se desea agregar:
+	Persona
+		nombreReal
+		nombreUser
+		password
+		edad
+		cedula
+		birthDay
+	PersonalAdmin
+		clave
+		puesto
+	Investigador
+		casosAttend //numero de casos atendidos
+		casosClosed //cerrados
+		casosUnsolved //sin resolver
+	Forense
+		fechaIngre //Fecha de ingreso
+		horario	   //Horario de trabajo
+GESTION DE EVIDENCIAS
+	Evidencia
+		nombre
+		tipo //arma blanca, arma de fuego, evidencia circumstancial
+		lugar //encortrado
+		bool huellas //tiene huellas o no?
+		bool procesado //esta o no procesado?
+GESTION DE CASOS
+	Caso
+		int casos
+		vector<Investigador> investigadores //atendi3ndo el caso
+		vector<Evidencia> evidencias //encontrada
+		hora //de incidente
+		fecha //de incidente
+		bool cerrado //esta cerrado o no?
+	Homicidio
+		vector<string> names //Nombre del sospechosos
+		nameSospect //NOMBRE DEL SOSPECHOSO
+		// SOLO CUANDO SE CIERRA EL CASO
+		nameVictim //NOMBRE DE VICTIMA
+		nameCulpable //NOmbre de culpable
+	Secuestro
+		nameVictim
+		motivo
+		rescate //SI O NO
+		cashRescate //Solo si recate es igual si
+		victimVivo //Si la victima esta viva al momento
