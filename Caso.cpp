@@ -11,6 +11,14 @@ Caso::Caso(){
 Caso::~Caso(){
 
 }
+Caso::Caso(const Caso& other):caso(other.caso), hora(other.hora), fecha(other.fecha), cerrado(other.cerrado){
+	for(int i = 0; i < other.investigadores.size(); i++){
+		investigadores.push_back(other.investigadores[i]);
+	}
+	for(int i = 0; i < other.evidencias.size(); i++){
+		evidencias.push_back(other.evidencias[i]);
+	}
+}
 int Caso::getCaso()const{
 	return caso;
 }
@@ -35,6 +43,14 @@ void Caso::modEvidencia(int index, Evidencia material){
 void Caso::delEvidencia(int index){
 	evidencias.erase(erase.begin() + index);
 }
+const vector<Investigador>& getInvestigadores()const{
+	return *investigadores;
+}
+const vector<Evidencia>& getEvidencias()const{
+	return *evidencias;
+}
+
+
 void Caso::setHora(string hora){
 	this->hora = hora;
 }

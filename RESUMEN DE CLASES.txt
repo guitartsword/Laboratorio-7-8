@@ -25,14 +25,14 @@ GESTION DE EVIDENCIAS
 		bool procesado //esta o no procesado?
 GESTION DE CASOS
 	Caso
-		int casos
+		int caso
 		vector<Investigador> investigadores //atendi3ndo el caso
 		vector<Evidencia> evidencias //encontrada
 		hora //de incidente
 		fecha //de incidente
 		bool cerrado //esta cerrado o no?
 	Homicidio
-		vector<string> names //Nombre del sospechosos
+		vector<string> names //Nombre de los sospechosos
 		nameSospect //NOMBRE DEL SOSPECHOSO
 		// SOLO CUANDO SE CIERRA EL CASO
 		nameVictim //NOMBRE DE VICTIMA
@@ -41,5 +41,5 @@ GESTION DE CASOS
 		nameVictim
 		motivo
 		rescate //SI O NO
-		cashRescate //Solo si recate es igual si
-		victimVivo //Si la victima esta viva al momento
+		cashRescate //Solo si se pide rescate (rescate == true)
+		victimVivo //Si la victima esta viva (solo si el caso se cerro)

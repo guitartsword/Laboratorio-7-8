@@ -1,4 +1,5 @@
 #pragma once
+#include <vector>
 #include <string>
 #include "Investigador.hpp"
 #include "Evidencia.hpp"
@@ -16,7 +17,8 @@ private:
 	bool cerrado; //esta el caso cerrado?
 public:
 	Caso();
-	~Caso();
+	virtual ~Caso();
+	Caso(const Caso&);
 	int getCaso()const;
 	void setCaso(int);
 	void addInvestigador(Investigador);
@@ -25,11 +27,13 @@ public:
 	void addEvidencia(Evidencia);
 	void modEvidencia(int index, Evidencia);
 	void delEvidencia(int index);
+	const vector<Investigador>& getInvestigadores()const;
+	const vector<Evidencia>& getEvidencias()const;
 	void setHora(string);
 	string getHora()const;
 	void setFecha(string);
 	string getFecha()const;
 	void setCerrado(bool);
 	bool isCerrado()const;
-	string toString()const;
+	virtual string toString()const;
 };
