@@ -54,7 +54,7 @@ void Persona::setCedula(string cedula){
 void Persona::setBirthday(string birthday){
 	this->birthday = birthday;
 }
-string Persona::toString(){
+string Persona::toString()const{
 	stringstream ss;
 	ss << "-Nombre Real: " << nombreReal  
 	<< "\n-Nombre User: " << nombreUser

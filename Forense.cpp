@@ -1,13 +1,14 @@
 # include "Forense.hpp"
 # include "Persona.hpp"
+# include "Caso.hpp"
 # include <string>
+# include <vector>
 # include <sstream>
 
-using std::string;
 using namespace std;
 
 Forense::Forense(string fechaIngre, string horario):fechaIngre(fechaIngre), horario(horario){}
-	Forense::Forense(const Forense&):Persona(other)fechaIngre(other.fechaIngre), horario(other.horario){}
+	Forense::Forense(const Forense& other):Persona(other)fechaIngre(other.fechaIngre), horario(other.horario){}
 	Forense::Forense(){}
 	Forense::~Forense(){}
 	string Forense::getFechaIngre()const{
@@ -21,6 +22,15 @@ Forense::Forense(string fechaIngre, string horario):fechaIngre(fechaIngre), hora
 	}
 	void Forense::setHorario(string horario){	
 		this->horario = horario;
+	}
+	string visualizarCaso(vector<Caso> homicidios)const{
+		stringstream ss;
+		ss << "Los homicidios encontrados son......\n";
+		for(int i=0; i < homicidios.size(); i++){
+			ss << "# " << i << " " << homicidios[i];
+			ss << "\n";
+		}
+		return ss.str();
 	}
 	string Forense::toString()const{
 		stringstream ss;

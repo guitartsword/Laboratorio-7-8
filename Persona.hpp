@@ -1,5 +1,7 @@
 # pragma once
 # include <string>
+# include <vector>
+# include "Caso.hpp"
 
 using std::string;
 
@@ -22,6 +24,7 @@ public:
 	void setCedula(string);
 	void setBirthday(string);
 	virtual string toString()const;
+	virtual string visualizarCaso(vector<Caso>)const=0;
 private:
 	string nombreReal;
 	string nombreUser;
