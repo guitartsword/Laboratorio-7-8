@@ -1,4 +1,6 @@
 #include "Caso.hpp"
+#include "Evidencia.hpp"
+#include "Investigador.hpp"
 #include <string>
 #include <sstream>;
 

@@ -6,6 +6,7 @@
 
 using std::string;
 using std::streamstring;
+using std::vector;
 
 Homicidio(){
 
@@ -43,6 +44,9 @@ void setNameCulpable(string culpable){
 }
 string toString()const{
 	stringstream ss;
-	ss << Homicidio.toString();
-
+	ss << Caso.toString() << endl
+	   << "Sospechoso" << sospechosos.size() << endl
+	   << "Nombre del sospechoso principal: "<< nameSospect << endl
+	   << "Nombre de la Victima: " << nameVictim << endl
+	   << "Nombre del Culpable: " << nameCulpable << endl;
 }
