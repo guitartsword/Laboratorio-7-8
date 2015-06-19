@@ -1,9 +1,11 @@
 # include "Forense.hpp"
 # include "Persona.hpp"
 # include "Caso.hpp"
+# include "Homicidio.hpp"
 # include <string>
 # include <vector>
 # include <sstream>
+# include <typeinfo>
 
 using namespace std;
 
@@ -25,10 +27,13 @@ Forense::Forense(string fechaIngre, string horario):fechaIngre(fechaIngre), hora
 	}
 	string visualizarCaso(vector<Caso> homicidios)const{
 		stringstream ss;
+		Homicidio a;
 		ss << "Los homicidios encontrados son......\n";
 		for(int i=0; i < homicidios.size(); i++){
-			ss << "# " << i << " " << homicidios[i];
-			ss << "\n";
+			if(typeid(homicidios[i]) == typeid(a)){
+				ss << "# " << i << " " << homicidios[i];
+				ss << "\n";
+			}
 		}
 		return ss.str();
 	}

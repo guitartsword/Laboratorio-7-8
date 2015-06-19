@@ -15,6 +15,7 @@ public:
 	string getHorario()const;
 	void setFechaIngre(string);
 	void setHorario(string);
+	virtual string visualizarCaso(vector<Caso> homicidios)const;
 	virtual string toString()const;
 
 private:

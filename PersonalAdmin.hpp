@@ -14,6 +14,7 @@ public:
 	string getClave()const;
 	void setPuesto(string);
 	void setClave(string);
+	virtual string visualizarCaso(vector<Caso> secuestros)const
 	virtual string toString()const; 
 private:
 	string puesto;

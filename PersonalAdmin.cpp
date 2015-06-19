@@ -1,7 +1,9 @@
 # include "PersonalAdmin.hpp"
 # include "Persona.hpp"
+# include "Secuestro.hpp"
 # include <string>
 # include <sstream>
+# include <typeinfo>
 
 using std::string;
 
@@ -20,6 +22,17 @@ void PersonalAdmin::setPuesto(string puesto){
 }
 void PersonalAdmin::setClave(string clave){
 	this->clave = clave;
+}
+string visualizarCaso(vector<Caso> secuestros)const{
+	stringstream ss;
+	ss << "Los secuestro Son:\n";
+	for (int i = 0; i < secuestros.size(); ++i)
+	{
+		if(typeid(secuestros[i]) == typeid(Secuestro)){
+			ss << secuestros[i] << "\n";
+		}
+	}
+	return ss.str();
 }
 string PersonalAdmin::toString()const{
 	stringstream ss;
