@@ -2,8 +2,7 @@
 # include "Persona.hpp"
 # include <string>
 
-using std::string;
-using namespace
+using namespace std;
 
 class Forense:public Persona{
 public:
@@ -15,7 +14,7 @@ public:
 	string getHorario()const;
 	void setFechaIngre(string);
 	void setHorario(string);
-	virtual string visualizarCaso(vector<Caso> homicidios)const;
+	virtual string visualizarCaso(vector<Caso*> homicidios)const;
 	virtual string toString()const;
 
 private:

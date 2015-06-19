@@ -2,10 +2,9 @@
 #include "Evidencia.hpp"
 #include "Investigador.hpp"
 #include <string>
-#include <sstream>;
+#include <sstream>
 
-using std::string;
-using std::stringstream;
+using namespace std;
 
 Caso::Caso(){
 
@@ -43,16 +42,14 @@ void Caso::modEvidencia(int index, Evidencia material){
 	evidencias[index] = material;
 }
 void Caso::delEvidencia(int index){
-	evidencias.erase(erase.begin() + index);
+	evidencias.erase(evidencias.begin() + index);
 }
 const vector<Investigador>& getInvestigadores()const{
-	return *investigadores;
+	return investigadores;
 }
 const vector<Evidencia>& getEvidencias()const{
-	return *evidencias;
+	return evidencias;
 }
-
-
 void Caso::setHora(string hora){
 	this->hora = hora;
 }

@@ -5,7 +5,7 @@
 #include "Evidencia.hpp"
 
 
-using std::string;
+using namespace std;
 
 class Caso{
 private:

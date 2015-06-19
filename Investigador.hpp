@@ -17,6 +17,7 @@ public:
 	int getCasosAttend()const;
 	int getCasosClosed()const;
 	int getCasosUnsolved()const;
+	virtual string visualizarCaso(vector<Caso*>);
 	virtual string toString()const;
 private:
 	int casosAttend;

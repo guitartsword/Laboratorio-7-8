@@ -1,4 +1,5 @@
 # include "Investigador.hpp"
+# include "Persona.hpp"
 # include <string>
 # include <sstream>
 
@@ -37,4 +38,10 @@ string Investigador::toString()const{
 	<< "#Casos cerrados: " << casosClosed
 	<< "#Casos sin resolver: " << casosUnsolved;
 	return ss.str();
+}
+string visualizarCaso(vector<Caso*> lista){
+	for(int i = 0; i < lista.size(); i++){
+		ss << "# " << i << " " << lista->at(i).toString
+		   << "\n";
+	}
 }

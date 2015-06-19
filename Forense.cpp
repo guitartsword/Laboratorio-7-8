@@ -25,13 +25,13 @@ Forense::Forense(string fechaIngre, string horario):fechaIngre(fechaIngre), hora
 	void Forense::setHorario(string horario){	
 		this->horario = horario;
 	}
-	string visualizarCaso(vector<Caso> homicidios)const{
+	string visualizarCaso(vector<Caso*> homicidios)const{
 		stringstream ss;
 		Homicidio a;
 		ss << "Los homicidios encontrados son......\n";
 		for(int i=0; i < homicidios.size(); i++){
-			if(typeid(homicidios[i]) == typeid(a)){
-				ss << "# " << i << " " << homicidios[i];
+			if(typeid(homicidios->at(i)) == typeid(a)){
+				ss << homicidios->at(i).toString();
 				ss << "\n";
 			}
 		}
@@ -41,6 +41,5 @@ Forense::Forense(string fechaIngre, string horario):fechaIngre(fechaIngre), hora
 		stringstream ss;
 		ss << "Fecha de ingreso: " << fechaIngre
 		<< "Horario: " << horario;
-
 		return ss.str();
 	}

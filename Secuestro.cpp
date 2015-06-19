@@ -50,15 +50,15 @@ asdlkjdsalkjdsadsalkjsdalkj
 string toString()const{
 	stringstream ss;
 	ss << Caso.toString() << endl
-	   << "Nombre de la victima: " << nameVictim << endl
-	   << "Motivo: " << motivo << endl;
+	   << "Nombre de la victima: " << this->nameVictim << endl
+	   << "Motivo: " << this->motivo << endl;
   	if (!rescate)
 		ss << "No ";
 	ss << "se solicito un rescate";
 	if(rescate){
 		ss << endl;
 		ss "Se piden: " << cashRescate << " por el rescate";
-		if(Caso.isCerrado()){
+		if(isCerrado()){
 			ss << "La victima esta: ";
 			if(victimVivo){
 				ss << "Viva";
@@ -67,5 +67,5 @@ string toString()const{
 			}
 		}
 	}
-	retrun ss.str();
+	return ss.str();
 }

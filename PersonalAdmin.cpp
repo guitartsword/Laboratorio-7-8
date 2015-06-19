@@ -23,13 +23,13 @@ void PersonalAdmin::setPuesto(string puesto){
 void PersonalAdmin::setClave(string clave){
 	this->clave = clave;
 }
-string visualizarCaso(vector<Caso> secuestros)const{
+string visualizarCaso(vector<Caso*> secuestros)const{
 	stringstream ss;
 	ss << "Los secuestro Son:\n";
 	for (int i = 0; i < secuestros.size(); ++i)
 	{
-		if(typeid(secuestros[i]) == typeid(Secuestro)){
-			ss << secuestros[i] << "\n";
+		if(typeid(secuestros->at(i) == typeid(Secuestro)){
+			ss << secuestros->at(i).toString() << "\n";
 		}
 	}
 	return ss.str();

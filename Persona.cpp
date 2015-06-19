@@ -14,7 +14,7 @@ Persona::Persona(string nombreReal, string nombreUser, string password,
 	this->cedula = cedula;
 	this->birthday = birthday;
 }
-persona::Persona(const Persona& other):nombreReal(other.nombreReal), nombreUser(other.nombreUser),
+Persona::Persona(const Persona& other):nombreReal(other.nombreReal), nombreUser(other.nombreUser),
 password(other.password), edad(other.edad), cedula(other.cedula), birthday(other.birthday){}
 Persona::Persona(){}
 Persona::~Persona(){}//sin usar

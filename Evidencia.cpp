@@ -2,7 +2,6 @@
 # include <string>
 # include <sstream>
 
-using std::string;
 using namespace std;
 
 Evidencia::Evidencia(string nombre, string tipo, string lugar, bool huellas, bool procesado){
