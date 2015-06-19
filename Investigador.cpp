@@ -5,15 +5,11 @@
 using namespace std;
 using std::string;
 
-Investigador::Investigador(int casosAttend, int casosClosed, int casosUnsolved):Persona(string nombreReal, string nombreUser,
-	string password, int edad, string cedula, string birthday){
-	this->casosAttend = casosAttend;
-	this->casosClosed = casosClosed;
-	this->casosUnsolved = casosUnsolved;
-}
-Investigador::Investigador(){
-
-}
+Investigador::Investigador(int casosAttend, int casosClosed, int casosUnsolved):casosAttend(casosAttend), 
+	casosClosed(casosClosed),casosUnsolved(casosUnsolved){}
+Investigador::Investigador(const Investigador& other):Persona(other), casosAttend(other.casosAttend),
+casosClosed(other.casosClosed),casosUnsolved(other.casosUnsolved){}
+Investigador::Investigador(){}//constructor vacio
 Investigador::~Investigador(){
 	//sin usarlo aun....
 }
