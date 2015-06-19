@@ -120,7 +120,44 @@ int main(int argc, char* argv[]){
 }
 
 void agregarPersonal(){
-
+	string nombreReal, nombreUser, password, cedula, birthday;
+	string c_ingreso;
+	int edad, p_organigrama, n_atend = 0, c_closed = 0, c_unsolved = 0;
+	int opc_ap = 0;
+	cout << "Tipo-----\n" 
+	<< "1)Personal Admin\n"
+	<< "2)Investigador\n3)Forense" << endl;
+	cin >> opc_ap;
+	cout << "Nombre Real = " ;
+	cin >> nombreReal;
+	cout << "Nombre de usuario = ";
+	cin >> nombreUser;
+	cout << "Password = ";
+	cin >. password;
+	cout << "Cedula = ";
+	cin >> cedula;
+	cout << "Birthday = ";
+	cin >> birthday;
+	if(opc_ap == 1){
+		cout << "Clave de ingreso al sistema =";
+		cin >> c_ingreso;
+		cout << "Puesto de organigrama = ";
+		cin >> p_organigrama;
+	}else{
+		if(opc_ap == 2){
+			cout << "Ingrese los numeros de casos atendidos" << endl;
+			cin >> n_atend;
+			cout << "Casos cerrados = ";
+			cin >> c_closed;
+			cout << "Casos sin resolver = ";
+			cin >> c_unsolved;
+		}else{
+			if(opc_ap == 3){
+				//en construccion
+			}
+		}
+	}
+	
 }
 void agregarEvidencia(){
 
