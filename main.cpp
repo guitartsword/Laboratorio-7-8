@@ -17,7 +17,7 @@ void agregarCaso();
 void printPersonal();   	//IMPRIMIR LOS INDICES TAMBIEN, solo mostrar: 'usuario' y 'NOMBRE REAL'
 void printCaso();      		//IMPRIMIR LOS "INDICES" TAMBIEN, solo mostrar: el numero de caso(INDICES+1), cantidad de investigadores y cantidad de evidencia 
 void printEvidencia();      //IMPRIMIR LOS INDICES TAMBIEN, solo mostrar: el toString(); //por ahora
-void menuDeAutenticar();
+void menuDeAutenticar(const vector<Persona>&);
 Persona login();
 
 void agre
@@ -111,7 +111,7 @@ int main(int argc, char* argv[]){
 			}
 			break;
 		case'4':
-			menuDeAutenticar();
+			menuDeAutenticar(personas);
 			break;
 		default:
 			cout << "SI VES ESTE MENSAJE ES PORQUE HAN HACKEADO TU COMPUTADORA!";
@@ -137,21 +137,39 @@ void printCaso(){
 void printEvidencia(){
 
 }
-void menuDeAutenticar(){
+void menuDeAutenticar(const vector<Persona>& lista){
 	char opc;
-	Persona personal = login();
-	do{
+	int personal = login(lista);
+	if(personal != -1){
 		do{
-			cout<<"-----MENU ADMINISTRATIVO----"
-			cout<<"1) Visualizar Casos"
-			cout<<"2) Salir"
-			cin >> opc;
-		}while(opc < '1'  || opc > '2');
-		if(opc == 1){
-			personal.visualizarCaso();
-		}
-	}while(opc != '2');
+			do{
+				cout<<"-----MENU ADMINISTRATIVO----"
+				cout<<"1) Visualizar Casos"
+				cout<<"2) Salir"
+				cin >> opc;
+			}while(opc < '1'  || opc > '2');
+			if(opc == 1){
+				cout << lista[personal].visualizarCaso(casos) << endl;
+			}
+		}while(opc != '2');
+	}else{
+		cout<<"El usuario o contrasena estan incorrects"<<endl;
+	}
 }
-Persona login(){
+Persona login(const vector<Persona>& lista){
+	int index = -1;
+	string usuario, password;
+	cout<<"Ingrese el usuario: "
+	cin>>usuario;
+	cout<<"Ingrese el pass: "
+	cin>>pass;
+	for(int i = 0; i < lista.size(); i++){
+		if(usuario.compare(lista[i].getNombreUser())==0){
+			if(pass.compare(lista[i].getPassword()==0)){
+				index = i;
+				break;
+			}
+		}
+	}
 
 }
