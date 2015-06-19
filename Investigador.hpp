@@ -8,15 +8,16 @@ using namespace std;
 class Investigador:public Persona{
 public:
 	Investigador(int, int, int);
+	Investigador(const Investigador&);
 	Investigador();
-	~Investigador();
+	virtual ~Investigador();
 	void setCasosAttend(int);
 	void setCasosClosed(int);
 	void setCasosUnsolved(int);
 	int getCasosAttend()const;
 	int getCasosClosed()const;
 	int getCasosUnsolved()const;
-	string toString()const;
+	virtual string toString()const;
 private:
 	int casosAttend;
 	int casosClosed;

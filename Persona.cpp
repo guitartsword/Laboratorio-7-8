@@ -3,6 +3,7 @@
 # include <sstream>
 
 using std::string;
+using namespace std;
 
 Persona::Persona(string nombreReal, string nombreUser, string password, 
 	int edad, string cedula, string birthday){
@@ -13,12 +14,10 @@ Persona::Persona(string nombreReal, string nombreUser, string password,
 	this->cedula = cedula;
 	this->birthday = birthday;
 }
-Persona::Persona(){
-
-}
-Persona::~Persona(){
-
-}//sin usar
+persona::Persona(const Persona& other):nombreReal(other.nombreReal), nombreUser(other.nombreUser),
+password(other.password), edad(other.edad), cedula(other.cedula), birthday(other.birthday){}
+Persona::Persona(){}
+Persona::~Persona(){}//sin usar
 string Persona::getNombreReal()const{
 	return nombreReal;
 }

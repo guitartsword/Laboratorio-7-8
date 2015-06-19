@@ -6,8 +6,9 @@ using std::string;
 class Persona{
 public:
 	Persona(string, string, string, int, string, string);
+	Persona(const Persona&);
 	Persona();
-	~Persona();//sin usar
+	virtual~Persona();//sin usar
 	string getNombreReal()const;
 	string getNombreUser()const;
 	string getPassword()const;
@@ -20,7 +21,7 @@ public:
 	void setEdad(int);
 	void setCedula(string);
 	void setBirthday(string);
-	string toString()const;
+	virtual string toString()const;
 private:
 	string nombreReal;
 	string nombreUser;
