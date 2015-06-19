@@ -18,7 +18,7 @@ void printPersonal();   	//IMPRIMIR LOS INDICES TAMBIEN, solo mostrar: 'usuario'
 void printCaso();      		//IMPRIMIR LOS "INDICES" TAMBIEN, solo mostrar: el numero de caso(INDICES+1), cantidad de investigadores y cantidad de evidencia 
 void printEvidencia();      //IMPRIMIR LOS INDICES TAMBIEN, solo mostrar: el toString(); //por ahora
 void menuDeAutenticar();
-int login(); // return 1 == PersonalAdmin; return 2 == Investigador, return 3 == Forense
+Persona login();
 
 void agre
 
@@ -134,26 +134,24 @@ void printPersonal(){
 void printCaso(){
 
 }
+void printEvidencia(){
+
+}
 void menuDeAutenticar(){
 	char opc;
-	int tipo = login();
+	Persona personal = login();
 	do{
-		cout<<"-----MENU ADMINISTRATIVO----"
-		cout<<"1) Visualizar Casos"
-		if(tipo == 1){
-		//PersonalAdmin
-
-		}else if(tipo == 2){
-		//Investigador
-
-		}else if(tipo == 3){
-		//Forense
-
-		}else{
-			cout<<"Preocupate si ves esto!"<<endl;
+		do{
+			cout<<"-----MENU ADMINISTRATIVO----"
+			cout<<"1) Visualizar Casos"
+			cout<<"2) Salir"
+			cin >> opc;
+		}while(opc < '1'  || opc > '2');
+		if(opc == 1){
+			personal.visualizarCaso();
 		}
-	}while(opc)
+	}while(opc != '2');
 }
-void login(){
+Persona login(){
 
 }
