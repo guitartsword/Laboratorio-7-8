@@ -1,19 +1,14 @@
 # include "PersonalAdmin.hpp"
+# include "Persona.hpp"
 # include <string>
 # include <sstream>
 
 using std::string;
 
-PersonalAdmin::PersonalAdmin(string puesto, string clave){
-	this->puesto = puesto;
-	this->clave = clave;
-}
-PersonalAdmin::PersonalAdmin(){
-
-}
-PersonalAdmin::~PersonalAdmin(){
-
-}// sin usar
+PersonalAdmin::PersonalAdmin(string puesto, string clave):puesto(puesto), clave(clave){}
+PersonalAdmin::PersonalAdmin(const PersonalAdmin& other):Persona(other), puesto(other.puesto), clave(other.clave){}
+PersonalAdmin::PersonalAdmin(){}//constructor vacio
+PersonalAdmin::~PersonalAdmin(){}// sin usar
 string PersonalAdmin::getPuesto()const{
 	return puesto;
 }

@@ -6,6 +6,7 @@ using std::string;
 class Persona{
 public:
 	Persona(string, string, string, int, string, string);
+	Persona(const Persona&);
 	Persona();
 	~Persona();//sin usar
 	string getNombreReal()const;
