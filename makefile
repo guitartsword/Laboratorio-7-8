@@ -6,7 +6,7 @@ Persona.o: Persona.hpp Persona.cpp
 	g++ -c Persona.cpp
 PersonalAdmin.o: PersonalAdmin.cpp PersonalAdmin.hpp Persona.hpp Caso.hpp
 	g++ -c PersonalAdmin.cpp
-Investigador.o: Investigador.cpp Investigador.hpp Persona.hpp 
+Investigador.o: Investigador.cpp Investigador.hpp Persona.hpp Caso.hpp
 	g++ -c Investigador.cpp
 Forense.o: Forense.cpp Forense.hpp Persona.hpp Caso.hpp
 	g++ -c Forense.cpp
